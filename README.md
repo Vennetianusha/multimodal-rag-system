@@ -100,19 +100,19 @@ multimodal-rag-system/
 ```
 
 ## ⚙️ Setup Instructions
-# 1️⃣ Clone Repository
+### 1️⃣ Clone Repository
 git clone <your-repo-url>
 cd multimodal-rag
-# 2️⃣ Create Virtual Environment
+### 2️⃣ Create Virtual Environment
 - Windows
 - python -m venv venv
 venv\Scripts\activate
 - Mac/Linux
 python3 -m venv venv
 source venv/bin/activate
-# 3️⃣ Install Dependencies
+### 3️⃣ Install Dependencies
 pip install -r requirements.txt
-# 4️⃣ Run the Application
+### 4️⃣ Run the Application
 uvicorn src.api.main:app --reload
 
 Open API documentation:
@@ -138,7 +138,7 @@ Supported formats:
 
 They will be automatically indexed on startup.
 
-## 🔍 API Usage
+### 🔍 API Usage
 Endpoint
 
 POST /query
@@ -158,7 +158,7 @@ Example Response
     }
   ]
 }
-## 🧠 Features
+### 🧠 Features
 
 - Automatic document ingestion
 
@@ -176,7 +176,7 @@ Example Response
 
 🧪 Running Tests
 pytest
-## 🎯 Evaluation Criteria Covered
+### 🎯 Evaluation Criteria Covered
 
 ✔ PDF + Image ingestion
 ✔ Multimodal embeddings
@@ -186,7 +186,7 @@ pytest
 ✔ Source references
 ✔ Modular architecture
 
-## 📈 Performance
+### 📈 Performance
 
 - Automatic indexing on startup
 
@@ -194,16 +194,17 @@ pytest
 
 - Average response time < 15 seconds
 
-# 📄 Documentation
+### 📄 Documentation
 
 - See ARCHITECTURE.md for system design
 
 - See submission.yml for evaluation commands
 
-## 👩‍💻 Author
+### 👩‍💻 Author
 - Anusha Pavani Venneti
 - Multimodal RAG System Implementation
 - Data Engineering + Machine Learning Project
+
 
 
 
