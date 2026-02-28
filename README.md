@@ -101,8 +101,8 @@ multimodal-rag-system/
 
 ## ⚙️ Setup Instructions
 ### 1️⃣ Clone Repository
-git clone <your-repo-url>
-cd multimodal-rag
+- git clone <your-repo-url>
+- cd multimodal-rag
 ### 2️⃣ Create Virtual Environment
 - Windows
 - python -m venv venv
@@ -113,16 +113,16 @@ source venv/bin/activate
 ### 3️⃣ Install Dependencies
 pip install -r requirements.txt
 ### 4️⃣ Run the Application
-uvicorn src.api.main:app --reload
+- uvicorn src.api.main:app --reload
 
-Open API documentation:
+- Open API documentation:
 
 http://127.0.0.1:8000/docs
-📥 Adding Documents
+- 📥 Adding Documents
 
-Place your files inside:
+- Place your files inside:
 
-sample_documents/
+- sample_documents/
 
 Supported formats:
 
@@ -136,10 +136,10 @@ Supported formats:
 
 .jpeg
 
-They will be automatically indexed on startup.
+- They will be automatically indexed on startup.
 
 ### 🔍 API Usage
-Endpoint
+- Endpoint
 
 POST /query
 
@@ -204,6 +204,7 @@ pytest
 - Anusha Pavani Venneti
 - Multimodal RAG System Implementation
 - Data Engineering + Machine Learning Project
+
 
 
 
