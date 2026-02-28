@@ -1,168 +1,71 @@
-# Multimodal RAG System Architecture
+# 🏗 Multimodal RAG System Architecture
 
 ## Overview
 
-This system implements a Multimodal Retrieval-Augmented Generation (RAG) pipeline capable of processing:
+This system implements a complete Multimodal Retrieval-Augmented Generation (RAG) pipeline.
 
-- PDF documents
-- Text files
-- Images (PNG/JPEG)
-
-It supports cross-modal retrieval and generates grounded responses through a REST API.
-
----
-
-## System Architecture
-
-The system follows a decoupled modular pipeline:
-
-1. Ingestion
-2. Embedding
-3. Indexing
-4. Retrieval
-5. Generation
-6. API Layer
+It supports:
+- PDF ingestion
+- Text ingestion
+- Image ingestion
+- Multimodal embeddings
+- Cross-modal retrieval
+- REST API interface
 
 ---
 
-## 1. Ingestion Layer
+## System Flow
 
-Modules:
-- document_parser.py
-- image_processor.py
+User Query
+    ↓
+Retriever
+    ↓
+Vector Database (ChromaDB)
+    ↓
+Context Construction
+    ↓
+Generator
+    ↓
+API Response
 
-Responsibilities:
-- Extract text from PDFs using PyMuPDF
-- Extract embedded images
-- Process standalone images
-- Read text files
-- Preserve metadata:
+---
+
+## Architecture Components
+
+### 1️⃣ Ingestion Layer
+- Parses PDFs (PyMuPDF)
+- Extracts text + images
+- Processes standalone text files
+- Processes standalone images
+
+### 2️⃣ Embedding Layer
+- Uses CLIP model from Sentence Transformers
+- Generates embeddings for:
+  - Text
+  - Images
+
+### 3️⃣ Vector Store
+- ChromaDB
+- Stores embeddings + metadata:
   - document_id
   - page_number
   - content_type
 
-Output:
-Structured content objects for embedding.
+### 4️⃣ Retrieval Layer
+- Performs semantic similarity search
+- Supports cross-modal retrieval
+- Returns top-k relevant chunks
 
----
-
-## 2. Embedding Layer
-
-Module:
-- model_loader.py
-
-Model:
-- CLIP (sentence-transformers/clip-ViT-B-32)
-
-Capabilities:
-- Text embedding
-- Image embedding
-- Shared semantic vector space
-
----
-
-## 3. Vector Store
-
-Module:
-- chroma_manager.py
-
-Technology:
-- ChromaDB (local persistent storage)
-
-Stores:
-- Embeddings
-- Metadata
-- Raw content reference
-
----
-
-## 4. Retrieval Layer
-
-Module:
-- retriever.py
-
-Steps:
-1. Embed user query
-2. Perform similarity search
-3. Retrieve top-k results
-4. Return documents + metadata
-
-Supports:
-- Cross-modal retrieval
-- Fusion of text + image results
-
----
-
-## 5. Generation Layer
-
-Module:
-- generator.py
-
-Approach:
+### 5️⃣ Generation Layer
 - Formats retrieved context
-- Generates final grounded response
-- Returns structured JSON output
-
-No paid APIs required (local generation logic).
+- Generates grounded response
+- Returns answer + sources
 
 ---
 
-## 6. API Layer
+## Design Decisions
 
-Framework:
-- FastAPI
-
-Endpoint:
-POST /query
-
-Flow:
-1. Receive query
-2. Retrieve relevant content
-3. Generate answer
-4. Return JSON response
-
----
-
-## Data Flow Diagram
-
-User Query  
-↓  
-Retriever  
-↓  
-Vector Database  
-↓  
-Context Fusion  
-↓  
-Generator  
-↓  
-API Response  
-
----
-
-## Key Design Decisions
-
-- Decoupled architecture for scalability
-- Shared embedding space for multimodal search
-- Metadata-rich indexing
-- Automatic document ingestion on startup
-- Local-only processing (no paid APIs)
-
----
-
-## Performance
-
-- Startup auto-indexing
-- Response latency under 15 seconds
-- Supports 10+ diverse documents
-
----
-
-## Conclusion
-
-This system demonstrates a complete production-style Multimodal RAG pipeline with:
-
-- Text + Image ingestion
-- Multimodal embeddings
-- Vector indexing
-- Cross-modal retrieval
-- REST API exposure
+- Modular architecture for clarity
+- Automatic indexing on startup
+- Local execution (no paid API required)
+- FastAPI for performance
