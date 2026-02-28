@@ -1,0 +1,5 @@
+Artificial Intelligence Overview
+
+Artificial Intelligence enables machines to simulate human intelligence.
+Machine learning is a subset of AI.
+Computer vision allows machines to understand images.

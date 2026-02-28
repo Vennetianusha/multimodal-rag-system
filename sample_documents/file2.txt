@@ -1,0 +1,5 @@
+Data Engineering Notes
+
+Data pipelines process raw data into useful information.
+ETL stands for Extract, Transform, Load.
+Vector databases store embeddings for semantic search.
