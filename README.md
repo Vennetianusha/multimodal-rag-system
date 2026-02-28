@@ -97,6 +97,7 @@ multimodal-rag-system/
 ├── ARCHITECTURE.md                # System architecture explanation
 ├── submission.yml                 # Automated evaluation config
 └── README.md                      # Project documentation
+```
 
 ## ⚙️ Setup Instructions
 # 1️⃣ Clone Repository
@@ -203,6 +204,7 @@ pytest
 - Anusha Pavani Venneti
 - Multimodal RAG System Implementation
 - Data Engineering + Machine Learning Project
+
 
 
 
