@@ -63,27 +63,41 @@ For detailed architecture documentation, see:
 
 ---
 ## 📂 Project Structure
-src/
- ├── api/
- │   └── main.py
- ├── ingestion/
- │   ├── document_parser.py
- │   └── image_processor.py
- ├── embeddings/
- │   └── model_loader.py
- ├── retrieval/
- │   └── retriever.py
- ├── generation/
- │   └── generator.py
- └── vector_store/
-     └── chroma_manager.py
 
-sample_documents/
-tests/
-requirements.txt
-ARCHITECTURE.md
-submission.yml
-README.md
+```text
+multimodal-rag-system/
+│
+├── src/
+│   ├── api/
+│   │   └── main.py                # FastAPI application entry point
+│   │
+│   ├── ingestion/
+│   │   ├── document_parser.py     # PDF & text parsing logic
+│   │   └── image_processor.py     # Image processing & OCR handling
+│   │
+│   ├── embeddings/
+│   │   └── model_loader.py        # CLIP embedding model loader
+│   │
+│   ├── retrieval/
+│   │   └── retriever.py           # Cross-modal retrieval logic
+│   │
+│   ├── generation/
+│   │   └── generator.py           # Response generation module
+│   │
+│   └── vector_store/
+│       └── chroma_manager.py      # ChromaDB management
+│
+├── sample_documents/              # Input PDFs, images, text files
+│
+├── tests/
+│   ├── test_ingestion.py
+│   └── test_api.py
+│
+├── requirements.txt               # Python dependencies
+├── ARCHITECTURE.md                # System architecture explanation
+├── submission.yml                 # Automated evaluation config
+└── README.md                      # Project documentation
+
 ## ⚙️ Setup Instructions
 # 1️⃣ Clone Repository
 git clone <your-repo-url>
@@ -189,6 +203,7 @@ pytest
 - Anusha Pavani Venneti
 - Multimodal RAG System Implementation
 - Data Engineering + Machine Learning Project
+
 
 
 
