@@ -89,10 +89,10 @@ README.md
 git clone <your-repo-url>
 cd multimodal-rag
 # 2️⃣ Create Virtual Environment
-Windows
-python -m venv venv
+- Windows
+- python -m venv venv
 venv\Scripts\activate
-Mac/Linux
+- Mac/Linux
 python3 -m venv venv
 source venv/bin/activate
 # 3️⃣ Install Dependencies
@@ -145,19 +145,19 @@ Example Response
 }
 ## 🧠 Features
 
-Automatic document ingestion
+- Automatic document ingestion
 
-Multimodal embeddings (CLIP-based)
+- Multimodal embeddings (CLIP-based)
 
-Cross-modal semantic search
+- Cross-modal semantic search
 
-Metadata-rich indexing
+- Metadata-rich indexing
 
-Source-grounded responses
+- Source-grounded responses
 
-Fully documented REST API
+- Fully documented REST API
 
-Automated test suite
+- Automated test suite
 
 🧪 Running Tests
 pytest
@@ -173,21 +173,22 @@ pytest
 
 ## 📈 Performance
 
-Automatic indexing on startup
+- Automatic indexing on startup
 
-Supports 10+ diverse documents
+- Supports 10+ diverse documents
 
-Average response time < 15 seconds
+- Average response time < 15 seconds
 
-📄 Documentation
+# 📄 Documentation
 
-See ARCHITECTURE.md for system design
+- See ARCHITECTURE.md for system design
 
-See submission.yml for evaluation commands
+- See submission.yml for evaluation commands
 
-### 👩‍💻 Author
-Anusha Pavani Venneti
-Multimodal RAG System Implementation
-Data Engineering + Machine Learning Project
+## 👩‍💻 Author
+- Anusha Pavani Venneti
+- Multimodal RAG System Implementation
+- Data Engineering + Machine Learning Project
 
-## 📂 Project Structure
+
+
